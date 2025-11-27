@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { ArrowRight, Atom, Beaker, Brain, Code, Database, FileText, Github, Linkedin, Mail, Microscope, Waves } from "lucide-react";
+import { ArrowRight, Atom, Beaker, BookOpen, Brain, Code, ExternalLink, FileText, Github, Linkedin, Mail, Microscope, Waves } from "lucide-react";
 
 export default function Home() {
   const projects = [
@@ -12,31 +12,36 @@ export default function Home() {
       title: "Coretekpb.store",
       description: "Revolutionary pickleball paddle company featuring Alpha and Omega paddles with advanced composite materials and AI-powered analysis.",
       tags: ["E-commerce", "Materials Science", "AI Analytics"],
-      link: "#"
+      link: "https://coretekpb.store"
     },
     {
-      title: "Acoustic PBCoR Analyzer",
-      description: "Innovative tool that measures the Coefficient of Restitution (CoR) of bouncing objects using only acoustic analysis - no visual tracking required.",
-      tags: ["Audio Processing", "Signal Analysis", "Physics"],
-      link: "#"
+      title: "Red Star Realism",
+      description: "Revolutionary poster generator that transforms portraits into Socialist Realist art style using advanced generative AI technology.",
+      tags: ["Generative AI", "Image Processing", "React"],
+      link: "https://red-star-realism.vercel.app/"
     },
     {
-      title: "Paddle Comparison Tool",
-      description: "AI-powered analytics platform for comparing pickleball paddles with comprehensive database of 200+ paddles across 47 brands.",
-      tags: ["AI/ML", "Data Analytics", "React"],
-      link: "#"
+      title: "Red Brush",
+      description: "Socialist Realist poster generator allowing users to upload portraits and create timeless propaganda art inspiring collective action.",
+      tags: ["Digital Art", "Web App", "Netlify"],
+      link: "https://nork.netlify.app/"
     },
     {
-      title: "Red Star Realism App",
-      description: "Initial creative AI application that transforms portraits into Socialist Realist art style using advanced generative AI technology.",
-      tags: ["AI Image Generation", "Computer Vision", "Generative AI"],
-      link: "#"
-    },
+      title: "Ai Imam",
+      description: "AI-powered Islamic jurisprudence tool providing scholarly fatwas in English and Arabic based on user questions.",
+      tags: ["AI/ML", "NLP", "Cloud Run"],
+      link: "https://ai-imam-fatwas-by-imam-ai-kitab-365757207239.us-west1.run.app/"
+    }
+  ];
+
+  const publications = [
     {
-      title: "CloudGaze",
-      description: "An innovative cloud-based image analysis platform leveraging advanced AI for detailed object detection, scene understanding, and data extraction.",
-      tags: ["Cloud Computing", "AI/ML", "Image Recognition"],
-      link: "#"
+      title: "Mass Spectrometry Cleavable Strategy for Identification and Differentiation of Prenylated Peptides",
+      journal: "Analytical Chemistry",
+      year: "2015",
+      authors: "Ruchika P. Bhawal, Sandhya C. Sadananda, Alejandro Bugarin, Brian Laposa, Saiful M. Chowdhury",
+      abstract: "Developed a novel method for detection and distinction of large-scale prenylated peptides using mass spectrometry-cleavable approaches. The method utilizes simple chemistry on the prenyl group and cleavable properties of a sulfoxide group to produce a signature mass spectrum.",
+      link: "https://pubs.acs.org/doi/abs/10.1021/ac503794s"
     }
   ];
 
@@ -61,6 +66,7 @@ export default function Home() {
             <a href="#home" className="hover:text-primary transition-colors">Home</a>
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+            <a href="#publications" className="hover:text-primary transition-colors">Publications</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
           <Button variant="outline" className="glass-button border-primary/20 text-primary hover:text-primary-foreground hover:bg-primary/20">
@@ -94,10 +100,10 @@ export default function Home() {
               Innovative solutions at the intersection of science and digital innovation. Transforming ideas into breakthrough technologies.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
                 Explore Projects
               </Button>
-              <Button size="lg" variant="outline" className="glass-button rounded-full px-8">
+              <Button size="lg" variant="outline" className="glass-button rounded-full px-8" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Get In Touch
               </Button>
             </div>
@@ -167,7 +173,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -176,11 +182,11 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="glass-panel h-full border-white/5 hover:border-primary/50 transition-all duration-300 group">
+                <Card className="glass-panel h-full border-white/5 hover:border-primary/50 transition-all duration-300 group flex flex-col">
                   <CardHeader>
                     <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow">
                     <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
                       {project.description}
                     </p>
@@ -193,8 +199,63 @@ export default function Home() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="ghost" className="w-full group-hover:bg-primary/10 group-hover:text-primary justify-between">
-                      View Project <ArrowRight className="w-4 h-4" />
+                    <Button asChild variant="ghost" className="w-full group-hover:bg-primary/10 group-hover:text-primary justify-between cursor-pointer">
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        View Project <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Publications Section */}
+      <section id="publications" className="py-24 relative">
+        <div className="container px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Publications</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Academic research and contributions to the scientific community.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {publications.map((pub, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Card className="glass-panel border-white/5 hover:border-secondary/50 transition-all duration-300">
+                  <CardHeader>
+                    <div className="flex justify-between items-start gap-4">
+                      <div>
+                        <CardTitle className="text-xl mb-2 leading-snug">{pub.title}</CardTitle>
+                        <CardDescription className="text-primary font-medium">
+                          {pub.journal}, {pub.year}
+                        </CardDescription>
+                      </div>
+                      <BookOpen className="w-6 h-6 text-secondary flex-shrink-0" />
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground mb-4 italic">
+                      {pub.authors}
+                    </p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {pub.abstract}
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button asChild variant="outline" className="glass-button border-secondary/20 text-secondary hover:text-secondary-foreground hover:bg-secondary/20">
+                      <a href={pub.link} target="_blank" rel="noopener noreferrer">
+                        Read Publication <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
                     </Button>
                   </CardFooter>
                 </Card>
