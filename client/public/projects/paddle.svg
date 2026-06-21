@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#0f172a"/>
+  <!-- Paddle head -->
+  <ellipse cx="200" cy="130" rx="70" ry="85" stroke="#0bc5ea" stroke-width="3" fill="none"/>
+  <!-- Handle -->
+  <rect x="192" y="210" width="16" height="60" rx="4" stroke="#0bc5ea" stroke-width="2" fill="none"/>
+  <!-- Hexagonal composite pattern -->
+  <polygon points="200,90 215,100 215,120 200,130 185,120 185,100" stroke="#1a365d" stroke-width="1.5" fill="none"/>
+  <polygon points="200,130 215,140 215,160 200,170 185,160 185,140" stroke="#1a365d" stroke-width="1.5" fill="none"/>
+  <polygon points="215,100 230,110 230,130 215,140 200,130 200,110" stroke="#1a365d" stroke-width="1" fill="none"/>
+  <polygon points="185,100 200,110 200,130 185,140 170,130 170,110" stroke="#1a365d" stroke-width="1" fill="none"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#1a1a2e"/>
+  <!-- Radiating lines -->
+  <line x1="200" y1="150" x2="200" y2="30" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="150" x2="285" y2="65" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="150" x2="340" y2="150" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="150" x2="285" y2="235" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="150" x2="200" y2="270" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="150" x2="115" y2="235" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="150" x2="60" y2="150" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <line x1="200" y1="150" x2="115" y2="65" stroke="#d69e2e" stroke-width="1" opacity="0.5"/>
+  <!-- 5-point star -->
+  <polygon points="200,50 220,110 285,110 232,148 252,210 200,172 148,210 168,148 115,110 180,110" fill="#c53030" stroke="#d69e2e" stroke-width="2"/>
+</svg>

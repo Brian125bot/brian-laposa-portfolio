@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#1a202c"/>
+  <!-- Crescent moon -->
+  <path d="M220,80 A70,70 0 1,1 220,220 A55,55 0 1,0 220,80" fill="#38a169" stroke="#319795" stroke-width="2"/>
+  <!-- Circuit nodes -->
+  <circle cx="260" cy="100" r="6" fill="#319795"/>
+  <circle cx="290" cy="140" r="6" fill="#319795"/>
+  <circle cx="260" cy="190" r="6" fill="#319795"/>
+  <!-- Circuit lines -->
+  <line x1="254" y1="100" x2="220" y2="100" stroke="#319795" stroke-width="1.5"/>
+  <line x1="284" y1="140" x2="254" y2="140" stroke="#319795" stroke-width="1.5"/>
+  <line x1="254" y1="190" x2="220" y2="190" stroke="#319795" stroke-width="1.5"/>
+  <line x1="290" y1="146" x2="290" y2="134" stroke="#319795" stroke-width="1.5"/>
+  <line x1="260" y1="106" x2="260" y2="184" stroke="#319795" stroke-width="1" opacity="0.4"/>
+  <!-- Data dots -->
+  <circle cx="310" cy="100" r="3" fill="#38a169" opacity="0.6"/>
+  <circle cx="310" cy="140" r="3" fill="#38a169" opacity="0.6"/>
+  <circle cx="310" cy="180" r="3" fill="#38a169" opacity="0.6"/>
+  <line x1="296" y1="100" x2="307" y2="100" stroke="#38a169" stroke-width="1" opacity="0.6"/>
+  <line x1="296" y1="140" x2="307" y2="140" stroke="#38a169" stroke-width="1" opacity="0.6"/>
+  <line x1="296" y1="180" x2="307" y2="180" stroke="#38a169" stroke-width="1" opacity="0.6"/>
+</svg>
