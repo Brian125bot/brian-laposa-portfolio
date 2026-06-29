@@ -37,6 +37,14 @@ const projects = [
     link: "https://ourlordoflethality.vercel.app",
     image: "/projects/cross.svg",
   },
+  {
+    title: "Vercel EZSlack",
+    description:
+      "Serverless Slack AI agent with Gemini, Express & Vercel — tool orchestration, approval flows, and real-time dashboard.",
+    tags: ["Slack", "Gemini", "Serverless"],
+    link: "https://github.com/Brian125bot/vercel_ezslack.git",
+    image: "/projects/slack-agent.svg",
+  },
 ];
 
 export default function Projects() {

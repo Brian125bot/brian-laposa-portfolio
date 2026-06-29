@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#09090b"/>
+  <!-- Chat bubbles representing Slack -->
+  <rect x="120" y="80" width="120" height="70" rx="10" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2"/>
+  <polygon points="120,130 100,160 140,140" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2" stroke-linejoin="round"/>
+
+  <rect x="160" y="140" width="120" height="70" rx="10" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2"/>
+  <polygon points="280,190 300,220 260,200" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- AI sparkle/stars -->
+  <path d="M180 115 L182 105 L192 103 L182 101 L180 91 L178 101 L168 103 L178 105 Z" fill="#eab308"/>
+  <path d="M220 175 L222 165 L232 163 L222 161 L220 151 L218 161 L208 163 L218 165 Z" fill="#eab308"/>
+  <circle cx="150" cy="115" r="4" fill="#3b82f6"/>
+  <circle cx="250" cy="175" r="4" fill="#10b981"/>
+</svg>
