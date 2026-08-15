@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#09090b"/>
+  <!-- Form card illustration -->
+  <rect x="80" y="60" width="240" height="180" rx="12" fill="#18181b" stroke="#27272a" stroke-width="2"/>
+
+  <!-- Form input field 1 -->
+  <rect x="110" y="95" width="180" height="30" rx="6" fill="#27272a" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.8"/>
+  <rect x="122" y="107" width="80" height="6" rx="3" fill="#a78bfa"/>
+  <!-- Checkmark on field 1 -->
+  <circle cx="272" cy="110" r="8" fill="#10b981" fill-opacity="0.2"/>
+  <path d="M268 110 L271 113 L276 107" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Form input field 2 -->
+  <rect x="110" y="135" width="180" height="30" rx="6" fill="#27272a" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.8"/>
+  <rect x="122" y="147" width="110" height="6" rx="3" fill="#a78bfa"/>
+  <!-- Checkmark on field 2 -->
+  <circle cx="272" cy="150" r="8" fill="#10b981" fill-opacity="0.2"/>
+  <path d="M268 150 L271 153 L276 147" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Form input field 3 -->
+  <rect x="110" y="175" width="180" height="30" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+  <rect x="122" y="187" width="60" height="6" rx="3" fill="#71717a"/>
+
+  <!-- AI Sparkles / Gemini star -->
+  <path d="M305 75 L308 60 L323 57 L308 54 L305 39 L302 54 L287 57 L302 60 Z" fill="#c084fc"/>
+  <path d="M95 225 L97 215 L107 213 L97 211 L95 201 L93 211 L83 213 L93 215 Z" fill="#38bdf8"/>
+  <circle cx="315" cy="100" r="3" fill="#a78bfa"/>
+  <circle cx="85" cy="180" r="3" fill="#38bdf8"/>
+</svg>

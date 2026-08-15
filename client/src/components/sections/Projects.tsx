@@ -45,6 +45,14 @@ const projects = [
     link: "https://github.com/Brian125bot/vercel_ezslack.git",
     image: "/projects/slack-agent.svg",
   },
+  {
+    title: "AI Smart Form Fill",
+    description:
+      "AI powered Gemini extension that uses custom context to batch fill online forms.",
+    tags: ["Gemini", "Chrome Extension", "AI/ML"],
+    link: "https://github.com/Brian125bot/ai_smart_fill/tree/main",
+    image: "/projects/smart-fill.svg",
+  },
 ];
 
 export default function Projects() {
