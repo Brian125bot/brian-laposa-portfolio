@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#09090b"/>
+  <!-- Notebook / Repo Card Container -->
+  <rect x="70" y="50" width="260" height="200" rx="14" fill="#18181b" stroke="#27272a" stroke-width="2"/>
+
+  <!-- Spiral binding on the left edge -->
+  <line x1="95" y1="50" x2="95" y2="250" stroke="#3f3f46" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <rect x="85" y="70" width="20" height="6" rx="3" fill="#a78bfa"/>
+  <rect x="85" y="105" width="20" height="6" rx="3" fill="#a78bfa"/>
+  <rect x="85" y="140" width="20" height="6" rx="3" fill="#a78bfa"/>
+  <rect x="85" y="175" width="20" height="6" rx="3" fill="#a78bfa"/>
+  <rect x="85" y="210" width="20" height="6" rx="3" fill="#a78bfa"/>
+
+  <!-- Code / Notebook Header Block -->
+  <rect x="120" y="75" width="180" height="24" rx="6" fill="#27272a"/>
+  <!-- GitHub Octocat / Repo Icon representation -->
+  <circle cx="135" cy="87" r="6" fill="#8b5cf6"/>
+  <rect x="148" y="84" width="70" height="6" rx="3" fill="#c084fc"/>
+
+  <!-- Lock Icon (Private Repo Badge) -->
+  <rect x="270" y="82" width="12" height="10" rx="2" fill="#38bdf8"/>
+  <path d="M273 82 V78 A3 3 0 0 1 279 78 V82" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+
+  <!-- Multimedia Blocks -->
+  <!-- Audio / Waveform block -->
+  <rect x="120" y="112" width="180" height="32" rx="6" fill="#27272a" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.5"/>
+  <path d="M135 128 L140 120 L145 136 L150 124 L155 132 L160 122 L165 130 L170 128" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="180" y="125" width="105" height="6" rx="3" fill="#a78bfa"/>
+
+  <!-- Video / Media Player block -->
+  <rect x="120" y="152" width="180" height="38" rx="6" fill="#27272a" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.5"/>
+  <polygon points="135,163 135,179 148,171" fill="#c084fc"/>
+  <rect x="158" y="165" width="120" height="6" rx="3" fill="#e879f9"/>
+  <rect x="158" y="176" width="80" height="4" rx="2" fill="#71717a"/>
+
+  <!-- Code / Markdown cells block -->
+  <rect x="120" y="198" width="180" height="36" rx="6" fill="#27272a"/>
+  <rect x="130" y="208" width="50" height="5" rx="2.5" fill="#38bdf8"/>
+  <rect x="130" y="218" width="90" height="5" rx="2.5" fill="#a78bfa"/>
+
+  <!-- AI Sparkles / Magic elements -->
+  <path d="M315 45 L318 32 L331 29 L318 26 L315 13 L312 26 L299 29 L312 32 Z" fill="#c084fc"/>
+  <path d="M55 245 L57 237 L65 235 L57 233 L55 225 L53 233 L45 235 L53 237 Z" fill="#38bdf8"/>
+  <circle cx="330" cy="235" r="3" fill="#a78bfa"/>
+</svg>

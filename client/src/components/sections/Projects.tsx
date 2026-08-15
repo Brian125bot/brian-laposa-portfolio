@@ -53,6 +53,14 @@ const projects = [
     link: "https://github.com/Brian125bot/ai_smart_fill/tree/main",
     image: "/projects/smart-fill.svg",
   },
+  {
+    title: "RepoLM",
+    description:
+      "Multimedia notebook for public and private GitHub repos.",
+    tags: ["AI Notebook", "GitHub", "Multimedia"],
+    link: "https://github.com/Brian125bot",
+    image: "/projects/repolm.svg",
+  },
 ];
 
 export default function Projects() {
