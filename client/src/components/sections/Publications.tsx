@@ -23,7 +23,7 @@ const publications = [
     authors: "Brian Laposa",
     abstract:
       "An in-depth examination of institutional ecclesiolatry, exploring the ways in which religious institutions silence dissent and maintain power structures.",
-    link: "https://docs.google.com/document/d/1JmZpweFimT_-5fBxbPG1U55e97TiTdim/edit?usp=sharing&ouid=103249518831320869277&rtpof=true&sd=true",
+    link: "https://docs.google.com/document/d/e/2PACX-1vRFKXZNTpQkueYvD4GVkwi2LsHuby-ziPiADWmRDaSN6du4qeUZn4vMj2UlnZnUwg/pub",
   },
 ];
 
