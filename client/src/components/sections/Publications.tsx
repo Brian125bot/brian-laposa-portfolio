@@ -17,6 +17,15 @@ const publications = [
     link: "https://pubs.acs.org/doi/abs/10.1021/ac503794s",
   },
   {
+    title: "Native JSON Schema and Semantic Correctness in Live LLM API Calls",
+    journal: "Research Paper",
+    year: "2025",
+    authors: "Brian Laposa",
+    abstract:
+      "An exploration of native JSON schema enforcement and semantic correctness evaluation in real-time large language model API integrations.",
+    link: "https://drive.google.com/drive/folders/1fiWuW578FKlSjrGvHQohTbDYcHTlYh-h?usp=drive_link",
+  },
+  {
     title: "The Language of Silence: An Anatomy of Institutional Ecclesiolatry",
     journal: "Book",
     year: "2025",
