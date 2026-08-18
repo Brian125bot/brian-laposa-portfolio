@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#09090b"/>
+
+  <!-- Network Connections (DAG Edges) -->
+  <path d="M110 150 L200 90 M110 150 L200 210 M200 90 L290 150 M200 210 L290 150" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 4" opacity="0.6"/>
+  <path d="M200 90 L200 210" stroke="#3b82f6" stroke-dasharray="2 2" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Glowing connection lines -->
+  <line x1="110" y1="150" x2="200" y2="90" stroke="#818cf8" stroke-width="2" opacity="0.8"/>
+  <line x1="200" y1="90" x2="290" y2="150" stroke="#38bdf8" stroke-width="2" opacity="0.8"/>
+
+  <!-- Node 1: Input / Natural Language Intent -->
+  <circle cx="110" cy="150" r="22" fill="#1e1b4b" stroke="#6366f1" stroke-width="2.5"/>
+  <rect x="100" y="142" width="20" height="16" rx="3" fill="#818cf8" opacity="0.2" stroke="#818cf8" stroke-width="1.5"/>
+  <path d="M104 147h12M104 153h8" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Node 2A: Gemini Task Compiler -->
+  <circle cx="200" cy="90" r="24" fill="#0f172a" stroke="#38bdf8" stroke-width="2.5"/>
+  <!-- AI Sparkle Icon inside Node 2A -->
+  <path d="M200 78 L202 86 L210 88 L202 90 L200 98 L198 90 L190 88 L198 86 Z" fill="#38bdf8"/>
+
+  <!-- Node 2B: Bounded Jules Agent Dispatch -->
+  <circle cx="200" cy="210" r="24" fill="#1a103c" stroke="#a855f7" stroke-width="2.5"/>
+  <!-- Agent / Code brackets inside Node 2B -->
+  <path d="M193 204 L187 210 L193 216 M207 204 L213 210 L207 216" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Node 3: Quality Mesh & Evidence Verification -->
+  <circle cx="290" cy="150" r="26" fill="#064e3b" stroke="#10b981" stroke-width="2.5"/>
+  <!-- Shield / Checkmark in Node 3 -->
+  <path d="M282 144 L290 140 L298 144 V152 C298 158 290 163 290 163 C290 163 282 158 282 152 V144 Z" fill="#10b981" fill-opacity="0.2" stroke="#34d399" stroke-width="1.5"/>
+  <path d="M286 151 L289 154 L294 148" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Accent sparkles/nodes -->
+  <circle cx="155" cy="120" r="3" fill="#a855f7"/>
+  <circle cx="245" cy="120" r="3" fill="#38bdf8"/>
+  <circle cx="245" cy="180" r="3" fill="#10b981"/>
+</svg>
