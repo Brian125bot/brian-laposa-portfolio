@@ -27,51 +27,36 @@ const categories = [
 export default function About() {
   return (
     <Section id="about">
-      <div className="grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-            <img
-              src="/about-bg.webp"
-              alt="Brian Laposa"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             About Brian Laposa
           </h2>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-center">
             As a chemist with a passion for technology, I bridge the gap
             between scientific principles and innovative digital solutions. My
             unique background allows me to approach problems from both
             analytical and creative perspectives.
           </p>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-center">
             My work spans from revolutionary materials engineering in sports
             equipment to cutting-edge AI applications and acoustic analysis
             tools. Each project represents a fusion of scientific rigor and
             technological innovation.
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-6 pt-4">
             {categories.map((cat) => (
               <div key={cat.key}>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 text-center md:text-left">
                   {cat.label}
                 </h4>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   {skills
                     .filter((s) => s.category === cat.key)
                     .map((skill, index) => (

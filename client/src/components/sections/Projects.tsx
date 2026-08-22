@@ -30,14 +30,6 @@ const projects = [
     image: "/projects/star.svg",
   },
   {
-    title: "Ai Imam",
-    description:
-      "AI-powered Islamic jurisprudence tool providing scholarly fatwas in English and Arabic based on user questions.",
-    tags: ["AI/ML", "NLP", "Cloud Run"],
-    link: "https://ai-imam.vercel.app",
-    image: "/projects/crescent.svg",
-  },
-  {
     title: "Our Lord of Lethality",
     description:
       "Satirical web application that creates militarized dominionist prayers.",
