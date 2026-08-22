@@ -25,15 +25,6 @@ const publications = [
       "An exploration of native JSON schema enforcement and semantic correctness evaluation in real-time large language model API integrations.",
     link: "https://drive.google.com/drive/folders/1fiWuW578FKlSjrGvHQohTbDYcHTlYh-h?usp=drive_link",
   },
-  {
-    title: "The Language of Silence: An Anatomy of Institutional Ecclesiolatry",
-    journal: "Book",
-    year: "2025",
-    authors: "Brian Laposa",
-    abstract:
-      "An in-depth examination of institutional ecclesiolatry, exploring the ways in which religious institutions silence dissent and maintain power structures.",
-    link: "https://docs.google.com/document/d/e/2PACX-1vRFKXZNTpQkueYvD4GVkwi2LsHuby-ziPiADWmRDaSN6du4qeUZn4vMj2UlnZnUwg/pub",
-  },
 ];
 
 export default function Publications() {
