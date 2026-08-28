@@ -16,15 +16,6 @@ const publications = [
       "Developed a novel method for detection and distinction of large-scale prenylated peptides using mass spectrometry-cleavable approaches. The method utilizes simple chemistry on the prenyl group and cleavable properties of a sulfoxide group to produce a signature mass spectrum.",
     link: "https://pubs.acs.org/doi/abs/10.1021/ac503794s",
   },
-  {
-    title: "Native JSON Schema and Semantic Correctness in Live LLM API Calls",
-    journal: "Research Paper",
-    year: "2025",
-    authors: "Brian Laposa",
-    abstract:
-      "An exploration of native JSON schema enforcement and semantic correctness evaluation in real-time large language model API integrations.",
-    link: "https://drive.google.com/drive/folders/1fiWuW578FKlSjrGvHQohTbDYcHTlYh-h?usp=drive_link",
-  },
 ];
 
 export default function Publications() {
