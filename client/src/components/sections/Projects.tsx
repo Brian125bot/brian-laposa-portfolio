@@ -14,14 +14,6 @@ const projects = [
     image: "/projects/paddle.svg",
   },
   {
-    title: "Jules Foundry",
-    description:
-      "Control plane & orchestration platform for autonomous coding agents (Google Jules, Gemini, GitHub) with DAG task graphs, scope containment, and Quality Mesh verification.",
-    tags: ["Agentic AI", "Control Plane", "DAG Orchestration"],
-    link: "https://github.com/Brian125bot/jules-foundry",
-    image: "/projects/jules-foundry.svg",
-  },
-  {
     title: "Red Star Realism",
     description:
       "Revolutionary poster generator that transforms portraits into Socialist Realist art style using advanced generative AI technology.",
