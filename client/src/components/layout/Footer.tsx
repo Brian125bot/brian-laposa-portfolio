@@ -1,5 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUp, Github, Mail } from "lucide-react";
+
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#publications", label: "Publications" },
+  { href: "#awards", label: "Awards" },
+  { href: "#contact", label: "Contact" },
+];
 
 const socialLinks = [
   { href: "https://github.com/brian125bot", icon: Github, label: "GitHub" },
@@ -8,37 +16,88 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const handleNavClick = (href: string) => {
+    document
+      .getElementById(href.slice(1))
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <footer className="py-8 border-t border-white/5">
-      <div className="container px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-sm text-muted-foreground">
+    <footer className="border-t border-border bg-background">
+      <div className="container py-16 md:py-20">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-8">
+          <div className="md:col-span-5">
+            <a
+              href="#home"
+              onClick={e => {
+                e.preventDefault();
+                handleNavClick("#home");
+              }}
+              className="font-display text-2xl tracking-tight text-foreground"
+            >
+              Brian Laposa
+            </a>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Software engineer building thoughtful, well-crafted digital
+              products at the intersection of AI and the web.
+            </p>
+          </div>
+
+          <div className="md:col-span-3">
+            <h4 className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+              Navigation
+            </h4>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {navLinks.map(link => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={e => {
+                      e.preventDefault();
+                      handleNavClick(link.href);
+                    }}
+                    className="text-sm text-foreground/80 hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-4">
+            <h4 className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+              Connect
+            </h4>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {socialLinks.map(link => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    className="group inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
+                  >
+                    <link.icon className="h-4 w-4 transition-colors group-hover:text-primary" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-14 flex flex-col-reverse items-start gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Brian Laposa. All rights reserved.
-          </div>
-
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/5 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                aria-label={link.label}
-              >
-                <link.icon className="w-4 h-4" />
-              </a>
-            ))}
-          </div>
-
-          <Button
-            variant="ghost"
-            size="sm"
+          </p>
+          <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-muted-foreground hover:text-primary"
+            className="group inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground transition-colors"
           >
-            Back to top <ArrowUp className="w-4 h-4 ml-2" />
-          </Button>
+            Back to top
+            <ArrowUp className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
+          </button>
         </div>
       </div>
     </footer>
