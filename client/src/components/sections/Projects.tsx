@@ -1,8 +1,6 @@
 import Section, { SectionHeader } from "@/components/layout/Section";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -47,8 +45,7 @@ const projects = [
   },
   {
     title: "RepoLM",
-    description:
-      "Multimedia notebook for public and private GitHub repos.",
+    description: "Multimedia notebook for public and private GitHub repos.",
     tags: ["AI Notebook", "GitHub", "Multimedia"],
     link: "https://github.com/Brian125bot",
     image: "/projects/repolm.svg",
@@ -57,67 +54,56 @@ const projects = [
 
 export default function Projects() {
   return (
-    <Section id="projects" withBackground>
+    <Section id="projects">
       <SectionHeader
+        eyebrow="Selected work"
         title="Featured Projects"
         subtitle="A collection of work demonstrating the fusion of material science, AI, and web technologies."
       />
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {projects.map((project, index) => (
-          <motion.div
+          <motion.a
             key={index}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
+            className="group glass-panel rounded-lg overflow-hidden flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-[border-color,box-shadow,transform] duration-300 hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-md"
           >
-            <Card className="glass-panel h-full border-white/5 hover:border-primary/50 transition-all duration-300 group flex flex-col overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary border border-primary/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  asChild
-                  variant="ghost"
-                  className="w-full group-hover:bg-primary/10 group-hover:text-primary justify-between cursor-pointer"
-                >
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+            <div className="relative aspect-[4/3] overflow-hidden border-b border-border bg-muted">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col flex-grow p-6">
+              <h3 className="font-display font-semibold text-xl leading-snug mb-2 tracking-tight">
+                {project.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                {project.description}
+              </p>
+              <div className="mt-auto flex flex-wrap gap-2 mb-5">
+                {project.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="text-[11px] uppercase tracking-wider font-medium px-2 py-1 rounded border border-border text-muted-foreground"
                   >
-                    View Project <ExternalLink className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                View project
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </span>
+            </div>
+          </motion.a>
         ))}
       </div>
     </Section>

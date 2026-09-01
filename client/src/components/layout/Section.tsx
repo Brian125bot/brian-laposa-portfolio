@@ -47,7 +47,7 @@ export function SectionHeader({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`flex flex-col ${alignment} mb-16 max-w-2xl`}
     >
       {eyebrow ? (
@@ -55,10 +55,17 @@ export function SectionHeader({
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="font-display text-3xl md:text-4xl tracking-tight mb-4">
+      <h2
+        className="font-display font-bold tracking-tight mb-4 leading-tight max-w-3xl"
+        style={{ fontSize: "var(--text-h2)" }}
+      >
         {title}
       </h2>
-      <p className="text-muted-foreground leading-relaxed">{subtitle}</p>
+      <p
+        className={`text-muted-foreground leading-relaxed ${align === "left" ? "max-w-2xl" : "max-w-2xl mx-auto"}`}
+      >
+        {subtitle}
+      </p>
     </motion.div>
   );
 }
