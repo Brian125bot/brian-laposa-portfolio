@@ -76,11 +76,10 @@ export default function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-foreground transition-colors"
                     aria-label={link.label}
+                    className="group inline-flex h-9 w-9 items-center justify-center rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
                   >
-                    <link.icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                    <span>{link.label}</span>
+                    <link.icon className="h-4 w-4 transition-colors group-hover:text-primary" />
                   </a>
                 </li>
               ))}
