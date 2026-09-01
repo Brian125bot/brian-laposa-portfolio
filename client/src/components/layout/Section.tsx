@@ -17,9 +17,9 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`py-24 relative ${withBackground ? "bg-black/20" : ""} ${className}`}
+      className={`relative py-20 md:py-24 ${withBackground ? "bg-muted/40" : ""} ${className}`}
     >
-      <div className="container px-6">{children}</div>
+      <div className="container">{children}</div>
     </section>
   );
 }

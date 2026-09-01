@@ -83,7 +83,7 @@ export default function Navbar() {
           <SheetTrigger asChild className="md:hidden">
             <Button
               variant="ghost"
-              size="icon"
+              size="icon-lg"
               aria-label="Open menu"
               className="text-foreground hover:bg-accent"
             >
@@ -107,7 +107,7 @@ export default function Navbar() {
                     <li key={link.href}>
                       <button
                         onClick={() => handleNavClick(link.href)}
-                        className="w-full text-left px-2 py-2 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-accent/60 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+                        className="w-full text-left px-2 py-2.5 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-accent/60 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
                       >
                         {link.label}
                       </button>
