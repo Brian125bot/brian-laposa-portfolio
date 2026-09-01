@@ -1,6 +1,14 @@
 import Section from "@/components/layout/Section";
 import { motion } from "framer-motion";
-import { Atom, Beaker, Brain, Cloud, Code, FileText, Waves } from "lucide-react";
+import {
+  Atom,
+  Beaker,
+  Brain,
+  Cloud,
+  Code,
+  FileText,
+  Waves,
+} from "lucide-react";
 
 const skills = [
   { name: "Chemistry", icon: Beaker, category: "science" },
@@ -24,57 +32,88 @@ const categories = [
   { key: "other", label: "Other" },
 ];
 
+const easeOut = [0.22, 1, 0.36, 1] as const;
+
 export default function About() {
   return (
     <Section id="about">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
+      <div className="max-w-5xl mx-auto">
+        <motion.header
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: easeOut }}
+          className="mb-16 md:mb-20 text-center md:text-left"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-            About Brian Laposa
-          </h2>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-center">
-            As a chemist with a passion for technology, I bridge the gap
-            between scientific principles and innovative digital solutions. My
-            unique background allows me to approach problems from both
-            analytical and creative perspectives.
+          <p className="font-sans text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">
+            About
           </p>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-center">
-            My work spans from revolutionary materials engineering in sports
-            equipment to cutting-edge AI applications and acoustic analysis
-            tools. Each project represents a fusion of scientific rigor and
-            technological innovation.
-          </p>
-
-          <div className="space-y-6 pt-4">
-            {categories.map((cat) => (
-              <div key={cat.key}>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 text-center md:text-left">
-                  {cat.label}
-                </h4>
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                  {skills
-                    .filter((s) => s.category === cat.key)
-                    .map((skill, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/5 hover:border-primary/30 transition-colors"
-                      >
-                        <skill.icon className="w-4 h-4 text-primary" />
-                        <span className="text-sm font-medium">
-                          {skill.name}
-                        </span>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-col md:flex-row md:items-end md:gap-12">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] tracking-tight md:flex-1">
+              About Brian Laposa
+            </h2>
+            <div
+              className="hidden md:block h-px w-16 bg-border mb-3"
+              aria-hidden="true"
+            />
           </div>
-        </motion.div>
+        </motion.header>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: easeOut }}
+            className="md:col-span-3 space-y-6"
+          >
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-prose">
+              As a chemist with a passion for technology, I bridge the gap
+              between scientific principles and innovative digital solutions. My
+              unique background allows me to approach problems from both
+              analytical and creative perspectives.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-prose">
+              My work spans from revolutionary materials engineering in sports
+              equipment to cutting-edge AI applications and acoustic analysis
+              tools. Each project represents a fusion of scientific rigor and
+              technological innovation.
+            </p>
+          </motion.div>
+
+          <motion.aside
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.2, ease: easeOut }}
+            className="md:col-span-2"
+          >
+            <div className="space-y-8">
+              {categories.map(cat => (
+                <div key={cat.key}>
+                  <h4 className="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground mb-3">
+                    {cat.label}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {skills
+                      .filter(s => s.category === cat.key)
+                      .map((skill, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card/40 hover:border-primary/40 transition-colors"
+                        >
+                          <skill.icon className="w-3.5 h-3.5 text-primary" />
+                          <span className="text-xs font-medium text-foreground">
+                            {skill.name}
+                          </span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.aside>
+        </div>
       </div>
     </Section>
   );
