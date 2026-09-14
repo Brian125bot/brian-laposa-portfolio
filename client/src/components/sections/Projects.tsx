@@ -50,6 +50,13 @@ const projects = [
     link: "https://github.com/Brian125bot",
     image: "/projects/repolm.svg",
   },
+  {
+    title: "RepoPilot",
+    description: "Autonomous Agent for repository tasks.",
+    tags: ["AI Agent", "Automation", "GitHub"],
+    link: "https://github.com/Brian125bot/repopilot.git",
+    image: "/projects/repopilot.svg",
+  },
 ];
 
 export default function Projects() {
