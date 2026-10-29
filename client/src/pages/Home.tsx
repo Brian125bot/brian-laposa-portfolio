@@ -1,30 +1,28 @@
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Hero from "@/components/sections/Hero";
+import Navbar from "@/components/layout/Navbar";
 import About from "@/components/sections/About";
-import Projects from "@/components/sections/Projects";
-import Publications from "@/components/sections/Publications";
-import Awards from "@/components/sections/Awards";
 import Contact from "@/components/sections/Contact";
+import Hero from "@/components/sections/Hero";
+import Projects from "@/components/sections/Projects";
+import Research from "@/components/sections/Publications";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-primary-foreground">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-primary">
+    <div className="min-h-screen overflow-x-clip bg-paper text-ink">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+      >
         Skip to content
       </a>
-
       <Navbar />
-
       <main id="main">
         <Hero />
-        <About />
         <Projects />
-        <Publications />
-        <Awards />
+        <Research />
+        <About />
         <Contact />
       </main>
-
       <Footer />
     </div>
   );

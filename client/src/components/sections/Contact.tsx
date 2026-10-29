@@ -1,162 +1,89 @@
-import Section, { SectionHeader } from "@/components/layout/Section";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { motion } from "framer-motion";
-import { ExternalLink, Github, Globe, Linkedin, Mail } from "lucide-react";
-
-const profiles = [
-  { name: "dev.to", url: "https://dev.to/brianbot", icon: Github },
-  { name: "GitHub", url: "https://github.com/brian125bot", icon: Github },
-  { name: "Google Dev", url: "https://g.dev/brianlaposa", icon: Globe },
-];
+import { EMAIL, profiles } from "@/content";
+import { ArrowUpRight, Check, Copy } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (!copied) return;
+    const t = setTimeout(() => setCopied(false), 2200);
+    return () => clearTimeout(t);
+  }, [copied]);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+    } catch {
+      window.location.href = `mailto:${EMAIL}`;
+    }
+  };
+
   return (
-    <Section id="contact">
-      <SectionHeader
-        eyebrow="Get In Touch"
-        title="Let's work together"
-        subtitle="Interested in collaboration or have questions about my projects? I'd love to hear from you."
-      />
+    <section id="contact" className="bg-ink pb-16 pt-[clamp(5rem,10vw,9rem)] text-paper">
+      <div className="wrap">
+        <div className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-8">
+            <h2 className="h2 text-paper">Get in touch</h2>
+            <p className="mt-6 max-w-[34rem] font-serif text-[1.25rem] leading-relaxed text-paper/75">
+              For collaborations, contract work, or questions about any of the
+              projects, email is the fastest way to reach me.
+            </p>
 
-      <div className="max-w-5xl mx-auto grid gap-12 md:grid-cols-2 md:gap-16">
-        <div className="space-y-10">
-          <div className="space-y-6">
-            <a
-              href="mailto:redstarapp@proton.me"
-              className="group flex items-center gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-md"
-            >
-              <span
-                aria-hidden
-                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary transition-colors group-hover:border-primary/40"
+            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-5">
+              <a
+                href={`mailto:${EMAIL}`}
+                className="break-all font-semibold tracking-[-0.035em] text-paper underline decoration-endpoint-light decoration-2 underline-offset-[0.18em] transition-colors duration-200 hover:text-endpoint-light"
+                style={{ fontSize: "clamp(1.75rem, 4.6vw, 3.75rem)", lineHeight: 1.05 }}
               >
-                <Mail className="h-4 w-4" />
-              </span>
-              <span>
-                <span className="block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                  Email
-                </span>
-                <span className="block text-base font-medium text-foreground group-hover:text-primary transition-colors">
-                  redstarapp@proton.me
-                </span>
-              </span>
-            </a>
-
-            <a
-              href="#"
-              className="group flex items-center gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-md"
-            >
-              <span
-                aria-hidden
-                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-card text-primary transition-colors group-hover:border-primary/40"
+                {EMAIL}
+              </a>
+              <button
+                type="button"
+                onClick={copy}
+                className="inline-flex h-11 items-center gap-2 rounded-md border border-paper/25 px-4 text-[0.9375rem] font-medium text-paper transition-colors duration-200 hover:border-paper/60"
               >
-                <Linkedin className="h-4 w-4" />
-              </span>
-              <span>
-                <span className="block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                  LinkedIn
-                </span>
-                <span className="block text-base font-medium text-foreground group-hover:text-primary transition-colors">
-                  Connect on LinkedIn
-                </span>
-              </span>
-            </a>
+                {copied ? (
+                  <Check aria-hidden className="h-4 w-4 text-endpoint-light" />
+                ) : (
+                  <Copy aria-hidden className="h-4 w-4" />
+                )}
+                <span aria-live="polite">{copied ? "Copied" : "Copy address"}</span>
+              </button>
+            </div>
           </div>
 
-          <div className="border-t border-border pt-8">
-            <h4 className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground mb-5">
-              Find me online
-            </h4>
-            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              {profiles.map((profile, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
-                    ease: "easeOut",
-                  }}
-                >
+          <div className="md:col-span-4 md:pt-3">
+            <h3 className="text-[1.0625rem] font-semibold tracking-[-0.015em] text-paper">Elsewhere</h3>
+            <ul className="mt-4 border-t border-paper/15">
+              {profiles.map(p => (
+                <li key={p.name} className="border-b border-paper/15">
                   <a
-                    href={profile.url}
+                    href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-3 rounded-md border border-border bg-card px-4 py-3 transition-colors hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    className="group flex items-center justify-between gap-4 py-4"
                   >
-                    <span className="flex items-center gap-3">
-                      <span
-                        aria-hidden
-                        className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-border text-primary transition-colors group-hover:border-primary/40"
-                      >
-                        <profile.icon className="h-4 w-4" />
+                    <span>
+                      <span className="block text-[1.0625rem] font-medium text-paper transition-colors group-hover:text-endpoint-light">
+                        {p.name}
                       </span>
-                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                        {profile.name}
+                      <span className="block font-serif text-[0.9375rem] italic text-paper/60">
+                        {p.handle}
                       </span>
                     </span>
-                    <ExternalLink
+                    <ArrowUpRight
                       aria-hidden
-                      className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-primary"
+                      className="h-4 w-4 text-paper/60 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-endpoint-light"
                     />
                   </a>
-                </motion.li>
+                </li>
               ))}
             </ul>
           </div>
         </div>
-
-        <form
-          onSubmit={e => e.preventDefault()}
-          className="space-y-5 md:border-l md:border-border md:pl-12"
-        >
-          <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input
-              id="name"
-              name="name"
-              placeholder="Your name"
-              autoComplete="name"
-              className="h-11"
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="your@email.com"
-              autoComplete="email"
-              className="h-11"
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea
-              id="message"
-              name="message"
-              placeholder="How can we collaborate?"
-              className="min-h-[160px] resize-y"
-            />
-          </div>
-          <div className="space-y-3 pt-2">
-            <Button type="submit" size="lg" className="w-full rounded-full">
-              Send Message
-            </Button>
-            <p className="text-center text-sm text-muted-foreground">
-              Or email me directly at{" "}
-              <a href="mailto:redstarapp@proton.me" className="font-medium">
-                redstarapp@proton.me
-              </a>
-            </p>
-          </div>
-        </form>
       </div>
-    </Section>
+    </section>
   );
 }
