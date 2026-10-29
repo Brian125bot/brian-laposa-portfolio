@@ -9,15 +9,16 @@ export default function About() {
         <div className="md:col-span-8">
           <div className="prose-serif max-w-[40rem]" style={{ fontSize: "var(--text-lede)", lineHeight: 1.5 }}>
             <p>
-              I trained as a chemist, and I still work like one: state the
-              hypothesis, control the variables, measure, and write down what
-              actually happened. That habit transfers cleanly to software.
+              I&rsquo;m a chemist. My training is in analytical chemistry, and
+              the habits stuck: state the hypothesis, control the variables,
+              measure, and write down what actually happened.
             </p>
             <p>
-              My work runs from materials engineering for sports equipment to
-              generative AI apps and acoustic analysis tools. Most of it now is
-              agentic tooling, software that lets AI coding agents do real work
-              while a person stays in the loop to review it.
+              That has taken me from mass spectrometry research to materials
+              engineering at CoreTek, where we design composite pickleball
+              paddles. Programming is a hobby. I&rsquo;m self-taught, I lean on
+              AI coding assistants, and I use small projects to learn what
+              these tools can do and where they fall short.
             </p>
           </div>
 

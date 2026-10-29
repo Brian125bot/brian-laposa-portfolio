@@ -57,10 +57,11 @@ export default function Projects() {
     <section id="work" className="section-pad border-t border-rule">
       <div className="wrap">
         <div className="grid gap-6 md:grid-cols-12 md:items-end">
-          <h2 className="h2 md:col-span-7">Selected work</h2>
+          <h2 className="h2 md:col-span-7">Work and projects</h2>
           <p className="prose-serif text-graphite md:col-span-5">
-            A paddle company grounded in materials science, a few generative AI
-            apps, and open-source tools for working alongside coding agents.
+            CoreTek is my business. Everything after it is a personal project:
+            things I build in my spare time to learn how software and AI tools
+            work.
           </p>
         </div>
 
@@ -70,7 +71,7 @@ export default function Projects() {
         >
           <div className="flex flex-col justify-between gap-10 p-7 sm:p-10 md:col-span-6 md:p-12">
             <div>
-              <p className="text-[0.9375rem] font-medium text-endpoint">Featured venture</p>
+              <p className="text-[0.9375rem] font-medium text-endpoint">Co-founder</p>
               <h3
                 className="mt-3 font-semibold tracking-[-0.035em]"
                 style={{ fontSize: "var(--text-h2)", lineHeight: 1 }}
@@ -99,14 +100,14 @@ export default function Projects() {
 
         <ProjectIndex
           id="apps"
-          heading="Live web apps"
-          note="Generative AI, shipped and public."
+          heading="Web apps"
+          note="Small AI experiments, free to try."
           items={liveApps}
         />
         <ProjectIndex
           id="tools"
-          heading="Open-source tools"
-          note="Agents, automation, and the guardrails around them."
+          heading="Coding projects"
+          note="Hobby tools, with the source on GitHub."
           items={tools}
         />
       </div>

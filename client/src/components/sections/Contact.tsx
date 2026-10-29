@@ -27,8 +27,8 @@ export default function Contact() {
           <div className="md:col-span-8">
             <h2 className="h2 text-paper">Get in touch</h2>
             <p className="mt-6 max-w-[34rem] font-serif text-[1.25rem] leading-relaxed text-paper/75">
-              For collaborations, contract work, or questions about any of the
-              projects, email is the fastest way to reach me.
+              Whether it&rsquo;s chemistry, CoreTek, or one of the projects on
+              this page, email is the best way to reach me.
             </p>
 
             <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-5">

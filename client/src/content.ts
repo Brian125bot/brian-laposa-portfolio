@@ -51,7 +51,7 @@ export const tools: Project[] = [
   {
     title: "Vercel EZSlack",
     description:
-      "A serverless Slack agent on Gemini and Vercel, with tool orchestration, approval flows for risky actions, and a live dashboard.",
+      "A Slack bot that runs on Vercel and answers with Gemini. It can call tools, asks for approval before risky actions, and has a small dashboard.",
     stack: ["Gemini", "Express", "Vercel"],
     url: "https://github.com/Brian125bot/vercel_ezslack",
     linkLabel: "View source",
@@ -59,7 +59,7 @@ export const tools: Project[] = [
   {
     title: "AI Smart Fill",
     description:
-      "A Chrome extension that batch-fills online forms with Gemini, using context you provide.",
+      "A Chrome extension that uses Gemini to fill in online forms from notes you give it.",
     stack: ["Gemini", "Chrome extension"],
     url: "https://github.com/Brian125bot/ai_smart_fill",
     linkLabel: "View source",
@@ -67,7 +67,7 @@ export const tools: Project[] = [
   {
     title: "RepoPilot",
     description:
-      "A control plane for launching and supervising Google Jules coding-agent sessions across repositories.",
+      "A dashboard for starting and keeping an eye on Google Jules coding-assistant sessions.",
     stack: ["Next.js", "Jules", "GitHub"],
     url: "https://github.com/Brian125bot/repopilot",
     linkLabel: "View source",
@@ -75,7 +75,7 @@ export const tools: Project[] = [
   {
     title: "RepoLM",
     description:
-      "A multimedia notebook for exploring public and private GitHub repositories.",
+      "A notebook for exploring GitHub repositories with notes, audio, and images.",
     stack: ["AI notebook", "GitHub"],
     url: "https://github.com/Brian125bot",
     linkLabel: "View on GitHub",
@@ -113,15 +113,19 @@ export const disciplines = [
       "Mass spectrometry",
       "Materials science",
       "Signal processing",
-      "Patent development",
     ],
   },
   {
-    area: "AI",
-    items: ["Agentic development", "Generative AI", "Applied machine learning"],
+    area: "Business",
+    items: ["Product development", "Patent development", "E-commerce"],
   },
   {
-    area: "Engineering",
-    items: ["TypeScript", "Next.js", "Astro", "HTML and CSS", "Cloud infrastructure"],
+    area: "On the side",
+    items: [
+      "Programming, self-taught",
+      "TypeScript and Next.js",
+      "HTML and CSS",
+      "AI coding assistants",
+    ],
   },
 ];

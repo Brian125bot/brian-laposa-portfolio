@@ -18,30 +18,30 @@ type Peak = {
 const PEAKS: Peak[] = [
   {
     x: 0.13,
-    h: 0.52,
+    h: 0.66,
     label: "Mass spectrometry",
     meta: "Analytical Chemistry, 2015",
     href: "#research",
   },
   {
     x: 0.4,
-    h: 0.68,
+    h: 0.86,
     label: "Composite materials",
-    meta: "CoreTek Paddles",
+    meta: "CoreTek, co-founder",
     href: "#coretek",
   },
   {
     x: 0.64,
-    h: 0.58,
-    label: "Generative AI",
-    meta: "Live web apps",
+    h: 0.42,
+    label: "Web apps",
+    meta: "AI experiments",
     href: "#apps",
   },
   {
     x: 0.87,
-    h: 0.86,
-    label: "Agentic tools",
-    meta: "Open-source, ongoing",
+    h: 0.54,
+    label: "Coding projects",
+    meta: "A hobby, ongoing",
     href: "#tools",
   },
 ];
@@ -95,8 +95,8 @@ export default function Spectrum({ animate = true }: { animate?: boolean }) {
     <figure className="spectrum" data-animate={animate}>
       <figcaption className="sr-only">
         A mass spectrum used as a timeline of Brian's work, from 2015 to now.
-        Peaks mark mass spectrometry research, composite materials, generative
-        AI apps, and agentic developer tools.
+        Peaks mark mass spectrometry research, composite materials at CoreTek,
+        and hobby software projects.
       </figcaption>
 
       <div className="spectrum-plot">
