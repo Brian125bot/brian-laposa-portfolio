@@ -1,108 +1,75 @@
-import Section, { SectionHeader } from "@/components/layout/Section";
-import { motion } from "framer-motion";
-import { ArrowUpRight, BookOpen } from "lucide-react";
-import { useState } from "react";
+import { award, publication } from "@/content";
 
-const publications = [
-  {
-    title:
-      "Mass Spectrometry Cleavable Strategy for Identification and Differentiation of Prenylated Peptides",
-    journal: "Analytical Chemistry",
-    year: "2015",
-    authors:
-      "Ruchika P. Bhawal, Sandhya C. Sadananda, Alejandro Bugarin, Brian Laposa, Saiful M. Chowdhury",
-    abstract:
-      "Developed a novel method for detection and distinction of large-scale prenylated peptides using mass spectrometry-cleavable approaches. The method utilizes simple chemistry on the prenyl group and cleavable properties of a sulfoxide group to produce a signature mass spectrum.",
-    link: "https://pubs.acs.org/doi/abs/10.1021/ac503794s",
-  },
-];
-
-export default function Publications() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
+export default function Research() {
   return (
-    <Section id="publications" withBackground>
-      <SectionHeader
-        eyebrow="Research"
-        title="Publications"
-        subtitle="Academic research and contributions to the scientific community."
-      />
+    <section id="research" className="section-pad border-t border-rule bg-paper-2">
+      <div className="wrap grid gap-12 md:grid-cols-12">
+        <div className="md:col-span-4">
+          <h2 className="h2">Research</h2>
+          <p className="prose-serif mt-6 max-w-[22rem] text-graphite">
+            Undergraduate work in analytical chemistry, published in a
+            peer-reviewed ACS journal.
+          </p>
+        </div>
 
-      <div className="max-w-4xl mx-auto border-t border-border">
-        {publications.map((pub, index) => {
-          const isExpanded = expandedIndex === index;
-          return (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="border-b border-border"
+        <div className="md:col-span-8">
+          <article>
+            <p className="text-[0.9375rem] text-graphite">
+              <cite className="not-italic font-medium text-ink">{publication.journal}</cite>,{" "}
+              {publication.year}
+            </p>
+            <h3
+              className="mt-4 font-serif font-medium tracking-[-0.01em]"
+              style={{
+                fontSize: "var(--text-h3)",
+                lineHeight: 1.18,
+                fontVariationSettings: '"opsz" 48',
+              }}
             >
-              <div className="group flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-8 py-8 md:py-10">
-                <div className="hidden sm:flex shrink-0 w-10 h-10 rounded-md border border-border items-center justify-center text-muted-foreground group-hover:text-primary group-hover:border-primary/40 transition-colors">
-                  <BookOpen className="w-5 h-5" />
-                </div>
+              <a
+                href={publication.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors duration-200 hover:text-endpoint"
+              >
+                {publication.title}
+              </a>
+            </h3>
+            <p className="mt-5 text-[0.9375rem] leading-relaxed text-graphite">
+              {publication.authors.map((a, i) => (
+                <span key={a}>
+                  {a === "Brian Laposa" ? (
+                    <strong className="font-semibold text-ink">{a}</strong>
+                  ) : (
+                    a
+                  )}
+                  {i < publication.authors.length - 1 ? ", " : ""}
+                </span>
+              ))}
+            </p>
+            <p className="prose-serif mt-6 max-w-[40rem]">{publication.summary}</p>
+            <p className="mt-6 text-[0.9375rem]">
+              <a
+                href={publication.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-link font-medium"
+              >
+                Read the paper at ACS Publications
+              </a>
+              <span className="ml-3 text-graphite">doi:{publication.doi}</span>
+            </p>
+          </article>
 
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-display font-semibold text-xl md:text-2xl leading-snug tracking-tight mb-2">
-                    {pub.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    <span className="font-medium text-foreground">
-                      {pub.journal}
-                    </span>
-                    <span className="mx-2 text-border">·</span>
-                    <span>{pub.year}</span>
-                  </p>
-
-                  <motion.div
-                    initial={false}
-                    animate={{
-                      height: isExpanded ? "auto" : 0,
-                      opacity: isExpanded ? 1 : 0,
-                      marginTop: isExpanded ? 16 : 0,
-                    }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="overflow-hidden"
-                  >
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground font-medium mb-2">
-                      Authors
-                    </p>
-                    <p className="text-sm italic text-muted-foreground mb-4 leading-relaxed">
-                      {pub.authors}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {pub.abstract}
-                    </p>
-                  </motion.div>
-                </div>
-
-                <div className="flex sm:flex-col sm:items-end gap-3 shrink-0">
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-primary whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
-                  >
-                    Read
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                    aria-expanded={isExpanded}
-                    className="text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm"
-                  >
-                    {isExpanded ? "Hide abstract" : "View abstract"}
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
+          <div className="mt-14 border-t border-rule pt-8">
+            <h3 className="text-[1.125rem] font-semibold tracking-[-0.015em]">Recognition</h3>
+            <p className="mt-3 font-serif text-[1.125rem] text-ink">
+              {award.title}
+              <span className="text-graphite">, {award.organization}</span>
+            </p>
+          </div>
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

@@ -1,118 +1,115 @@
-import Section, { SectionHeader } from "@/components/layout/Section";
-import { motion } from "framer-motion";
+import PaddleCutaway from "@/components/PaddleCutaway";
+import { featured, liveApps, tools, type Project } from "@/content";
 import { ArrowUpRight } from "lucide-react";
 
-const projects = [
-  {
-    title: "coretekpaddles.com",
-    description:
-      "Revolutionary pickleball paddle company featuring Alpha and Omega paddles with advanced composite materials and AI-powered analysis.",
-    tags: ["E-commerce", "Materials Science", "AI Analytics"],
-    link: "https://coretekpaddles.com",
-    image: "/projects/paddle.svg",
-  },
-  {
-    title: "Red Star Realism",
-    description:
-      "Revolutionary poster generator that transforms portraits into Socialist Realist art style using advanced generative AI technology.",
-    tags: ["Generative AI", "Image Processing", "React"],
-    link: "https://red-star-realism.vercel.app/",
-    image: "/projects/star.svg",
-  },
-  {
-    title: "Our Lord of Lethality",
-    description:
-      "Satirical web application that creates militarized dominionist prayers.",
-    tags: ["Satire", "Web App", "Generative AI"],
-    link: "https://ourlordoflethality.vercel.app",
-    image: "/projects/cross.svg",
-  },
-  {
-    title: "Vercel EZSlack",
-    description:
-      "Serverless Slack AI agent with Gemini, Express & Vercel — tool orchestration, approval flows, and real-time dashboard.",
-    tags: ["Slack", "Gemini", "Serverless"],
-    link: "https://github.com/Brian125bot/vercel_ezslack.git",
-    image: "/projects/slack-agent.svg",
-  },
-  {
-    title: "AI Smart Form Fill",
-    description:
-      "AI powered Gemini extension that uses custom context to batch fill online forms.",
-    tags: ["Gemini", "Chrome Extension", "AI/ML"],
-    link: "https://github.com/Brian125bot/ai_smart_fill/tree/main",
-    image: "/projects/smart-fill.svg",
-  },
-  {
-    title: "RepoLM",
-    description: "Multimedia notebook for public and private GitHub repos.",
-    tags: ["AI Notebook", "GitHub", "Multimedia"],
-    link: "https://github.com/Brian125bot",
-    image: "/projects/repolm.svg",
-  },
-  {
-    title: "RepoPilot",
-    description: "Autonomous Agent for repository tasks.",
-    tags: ["AI Agent", "Automation", "GitHub"],
-    link: "https://github.com/Brian125bot/repopilot.git",
-    image: "/projects/repopilot.svg",
-  },
-];
+function ProjectIndex({
+  id,
+  heading,
+  note,
+  items,
+}: {
+  id: string;
+  heading: string;
+  note: string;
+  items: Project[];
+}) {
+  return (
+    <div id={id} className="mt-20 md:mt-28">
+      <div className="flex flex-col gap-2 border-b border-ink pb-4 sm:flex-row sm:items-baseline sm:justify-between">
+        <h3 className="text-[1.375rem] font-semibold tracking-[-0.02em]">{heading}</h3>
+        <p className="font-serif text-[1.0625rem] italic text-graphite">{note}</p>
+      </div>
+      <ul>
+        {items.map(p => (
+          <li key={p.title} className="border-b border-rule">
+            <a
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group -mx-3 grid gap-x-8 gap-y-2 rounded-md px-3 py-6 transition-colors duration-200 hover:bg-paper-2 md:grid-cols-12 md:items-baseline md:py-7"
+            >
+              <span className="text-[1.5rem] font-semibold leading-tight tracking-[-0.025em] text-ink transition-colors group-hover:text-endpoint md:col-span-4 md:text-[1.75rem]">
+                {p.title}
+              </span>
+              <span className="font-serif text-[1.0625rem] leading-relaxed text-ink md:col-span-5">
+                {p.description}
+              </span>
+              <span className="text-[0.875rem] text-graphite md:col-span-2">
+                {p.stack.join(", ")}
+              </span>
+              <span className="inline-flex items-center gap-1 text-[0.875rem] font-medium text-ink md:col-span-1 md:justify-end md:whitespace-nowrap">
+                <span className="md:sr-only">{p.linkLabel}</span>
+                <ArrowUpRight
+                  aria-hidden
+                  className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-endpoint md:h-5 md:w-5"
+                />
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function Projects() {
   return (
-    <Section id="projects">
-      <SectionHeader
-        eyebrow="Selected work"
-        title="Featured Projects"
-        subtitle="A collection of work demonstrating the fusion of material science, AI, and web technologies."
-      />
+    <section id="work" className="section-pad border-t border-rule">
+      <div className="wrap">
+        <div className="grid gap-6 md:grid-cols-12 md:items-end">
+          <h2 className="h2 md:col-span-7">Selected work</h2>
+          <p className="prose-serif text-graphite md:col-span-5">
+            A paddle company grounded in materials science, a few generative AI
+            apps, and open-source tools for working alongside coding agents.
+          </p>
+        </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {projects.map((project, index) => (
-          <motion.a
-            key={index}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
-            className="group glass-panel rounded-lg overflow-hidden flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-[border-color,box-shadow,transform] duration-300 hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-md"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden border-b border-border bg-muted">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="flex flex-col flex-grow p-6">
-              <h3 className="font-display font-semibold text-xl leading-snug mb-2 tracking-tight">
-                {project.title}
+        <article
+          id="coretek"
+          className="mt-14 grid overflow-hidden rounded-xl border border-rule bg-card md:mt-20 md:grid-cols-12"
+        >
+          <div className="flex flex-col justify-between gap-10 p-7 sm:p-10 md:col-span-6 md:p-12">
+            <div>
+              <p className="text-[0.9375rem] font-medium text-endpoint">Featured venture</p>
+              <h3
+                className="mt-3 font-semibold tracking-[-0.035em]"
+                style={{ fontSize: "var(--text-h2)", lineHeight: 1 }}
+              >
+                {featured.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                {project.description}
-              </p>
-              <div className="mt-auto flex flex-wrap gap-2 mb-5">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="text-[11px] uppercase tracking-wider font-medium px-2 py-1 rounded border border-border text-muted-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                View project
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </span>
+              <p className="prose-serif mt-6 max-w-[34rem]">{featured.description}</p>
             </div>
-          </motion.a>
-        ))}
+            <div className="flex flex-col gap-6">
+              <p className="text-[0.875rem] text-graphite">{featured.stack.join(", ")}</p>
+              <a
+                href={featured.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 w-fit items-center gap-2 rounded-md bg-ink px-6 text-[0.9375rem] font-medium text-paper transition-colors duration-200 hover:bg-endpoint"
+              >
+                Visit {featured.domain}
+                <ArrowUpRight aria-hidden className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+          <div className="relative flex min-h-[18rem] items-center justify-center border-t border-rule bg-paper-2 p-8 md:col-span-6 md:border-l md:border-t-0">
+            <PaddleCutaway className="h-full max-h-[26rem] w-full" />
+          </div>
+        </article>
+
+        <ProjectIndex
+          id="apps"
+          heading="Live web apps"
+          note="Generative AI, shipped and public."
+          items={liveApps}
+        />
+        <ProjectIndex
+          id="tools"
+          heading="Open-source tools"
+          note="Agents, automation, and the guardrails around them."
+          items={tools}
+        />
       </div>
-    </Section>
+    </section>
   );
 }
